@@ -1,0 +1,291 @@
+[
+  {
+    "defectId": "U001",
+    "questionId": "68dea87d387eea3d0d95fbe3",
+    "questionNumber": 6,
+    "hasStudentReport": false,
+    "relatedReports": [],
+    "repair": "notation",
+    "secondaryRepair": "markup_leak",
+    "route": "auto_apply",
+    "severity": "medium",
+    "summary": "Orphaned exponent '-1' on empty <mi></mi> base in unit 'volt^-1' + invalid MathML <mspace> tags placed raw in HTML outside <math>.",
+    "evidence": "In question HTML, 'volt <math ...><msup><mi></mi><mrow><mo>&minus;</mo><mn>1</mn></mrow></msup></math>' has an empty <mi></mi> base so '-1' floats detached from 'volt'. Additionally, options (B)-(D) are wrapped inside unclosed MathML <mspace linebreak=\"newline\"> tags placed directly inside <h3> HTML.",
+    "edit": {
+      "field": "question",
+      "find": "volt <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi></mi><mrow><mo>&minus;</mo><mn> 1 </mn></mrow></msup></mrow></math>",
+      "replace": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mtext>volt</mtext><mrow><mo>&minus;</mo><mn> 1 </mn></mrow></msup></mrow></math>"
+    }
+  },
+  {
+    "defectId": "U002",
+    "questionId": "68dea657387eea3d0d95f54a",
+    "questionNumber": 14,
+    "hasStudentReport": false,
+    "relatedReports": [],
+    "repair": "spelling",
+    "secondaryRepair": "notation",
+    "route": "auto_apply",
+    "severity": "low",
+    "summary": "Subscript typos 'P_eqcu' and 'P_eqch' instead of 'P_each' in stored solution, plus missing sign explanation on real magnification m = -4.",
+    "evidence": "In the last two equations of the stored solution, '2 P_each' and 'P_each = 5 D' are corrupted to '<mtext> eqcu </mtext>' and '<mtext> eqch </mtext>'. Also, 'v = mu = +50 cm' omits that m = -4 for an inverted real image (since u = -12.5 cm).",
+    "edit": {
+      "field": "solution",
+      "find": "<msub><mi> P </mi><mrow><mtext> eqcu </mtext></mrow></msub></mrow></math> Optical power of each lens is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi> P </mi><mrow><mtext> eqch </mtext></mrow></msub>",
+      "replace": "<msub><mi> P </mi><mrow><mtext> each </mtext></mrow></msub></mrow></math> Optical power of each lens is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi> P </mi><mrow><mtext> each </mtext></mrow></msub>"
+    }
+  },
+  {
+    "defectId": "U003",
+    "questionId": "695ede2a88d7701e561aa9d9",
+    "questionNumber": 22,
+    "hasStudentReport": false,
+    "relatedReports": [],
+    "repair": "spelling",
+    "secondaryRepair": null,
+    "route": "auto_apply",
+    "severity": "low",
+    "summary": "Broken punctuation/capitalisation in solution ('. as dialysis serves...').",
+    "evidence": "The stored solution writes 'The correct answer is (D) Statement-I is correct but Statement-II is incorrect. as dialysis serves as a crucial bridge...', splitting a single clause with a period followed by lowercase 'as'.",
+    "edit": {
+      "field": "solution",
+      "find": "Statement-II is incorrect. as&nbsp;dialysis",
+      "replace": "Statement-II is incorrect, as&nbsp;dialysis"
+    }
+  },
+  {
+    "defectId": "U004",
+    "questionId": "68dea6e6387eea3d0d95f6f8",
+    "questionNumber": 30,
+    "hasStudentReport": false,
+    "relatedReports": [],
+    "repair": "answer_form",
+    "secondaryRepair": "notation",
+    "route": "auto_apply",
+    "severity": "high",
+    "summary": "Ambiguous ratio direction in integerQuestion ('ratio of the sizes of these two images' could be 16 or 1/16) + wrong symbol '4DF' instead of '4Df' in solution.",
+    "evidence": "In the lens displacement method, the two images have sizes I_1 and I_2 with I_1/I_2 = 16 and I_2/I_1 = 1/16. Because this is an integerQuestion keyed to '16', the stem must specify 'ratio of the size of the larger image to the smaller image'. Also, the solution writes 'x^2 = D^2 - 4DF' (capital F) instead of '4Df'.",
+    "edit": {
+      "field": "question",
+      "find": "Find the ratio of the sizes of these two images formed on the screen.",
+      "replace": "Find the ratio of the size of the larger image to that of the smaller image formed on the screen."
+    }
+  },
+  {
+    "defectId": "U005",
+    "questionId": "66fe9dbe22132e5a70a3e579",
+    "questionNumber": 11,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R035"
+    ],
+    "repair": "solution_fix",
+    "secondaryRepair": "noise",
+    "route": "auto_apply",
+    "severity": "critical",
+    "summary": "Biologically backwards statement in solution ('Insulin and glucagon work synergistically' instead of 'antagonistically') + stray <ol><li> list numbering in question & solution + missing dash in Option C.",
+    "evidence": "While student R035 wrongly claimed relaxin and inhibin are antagonistic, nobody reported three real defects in Q#11: (1) The solution states 'Insulin and glucagon work synergistically to keep blood glucose concentrations normal'—in fact they are classic antagonistic hormones (insulin lowers blood glucose, glucagon raises it); (2) Both question and solution are wrapped in <ol><li> tags rendering a stray '1.' number; (3) Option (C) 'Aldosterone Atrial Natriuretic Factor' is missing the separator dash '–'.",
+    "edit": {
+      "field": "solution",
+      "find": "Insulin and glucagon work synergistically to keep blood glucose concentrations normal.",
+      "replace": "Insulin and glucagon work antagonistically to keep blood glucose concentrations normal (insulin lowers blood glucose while glucagon raises it)."
+    }
+  },
+  {
+    "defectId": "U006",
+    "questionId": "6264197209f4fd65f58f5707",
+    "questionNumber": 26,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R040"
+    ],
+    "repair": "spelling",
+    "secondaryRepair": null,
+    "route": "auto_apply",
+    "severity": "medium",
+    "summary": "Misspelled option (B) 'Canolla' in question + 5 concatenated words in solution including 'tonight blindness' ('to night blindness').",
+    "evidence": "Student R040 only wrote 'wrong' (key C = Golden rice is correct). However, Option (B) is misspelled 'Canolla' (spelled 'Canola' in the solution), and the solution has five missing-space typos: 'Golden riceis', 'producebeta-carotene', 'ofvitamin A', 'helpprevent', and 'tonight blindness' (instead of 'to night blindness').",
+    "edit": {
+      "field": "solution",
+      "find": "Golden riceis genetically engineered to producebeta-carotene, a precursor ofvitamin A, in the edible parts of the rice. It was specifically developed to helpprevent vitamin A deficiency, which can lead tonight blindness",
+      "replace": "Golden rice is genetically engineered to produce beta-carotene, a precursor of vitamin A, in the edible parts of the rice. It was specifically developed to help prevent vitamin A deficiency, which can lead to night blindness"
+    }
+  },
+  {
+    "defectId": "U007",
+    "questionId": "6062ec84518e9535e120c422",
+    "questionNumber": 28,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R027"
+    ],
+    "repair": "notation",
+    "secondaryRepair": "spelling",
+    "route": "auto_apply",
+    "severity": "medium",
+    "summary": "Corrupted temperature units '/AC', '/C', '/CC' (instead of '/°C') and symbol '3a' (instead of '3α') in solution + 'It’s length' in stem.",
+    "evidence": "Student R027 submitted a prompt-injection attack. While the answer key A is right, the stored solution has severe OCR symbol corruption in MathML: '/°C' became '/AC', '/C', and '/CC', and 'γ = 3α' became 'γ = 3a'. Also the stem writes 'It’s length' instead of 'Its length'.",
+    "edit": {
+      "field": "solution",
+      "find": "<mrow><mi mathvariant=\"normal\">A</mi><mi mathvariant=\"normal\">C</mi></mrow></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003B3;</mi><mo>&#x0003D;</mo><mn>3</mn><mi>a</mi><mo>&#x0003D;</mo><mn>3</mn><mi>&#x000D7;</mi><mn>1.9</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>5</mn></mrow></msup><mo>&#x0002F;</mo><mi>&#x00043;</mi><mo>&#x0003D;</mo><mn>5.7</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>5</mn></mrow></msup><mo>&#x0002F;</mo><mrow><mi mathvariant=\"normal\">C</mi><mi mathvariant=\"normal\">C</mi></mrow>",
+      "replace": "<msup><mrow></mrow><mo>&#x02218;</mo></msup><mi mathvariant=\"normal\">C</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003B3;</mi><mo>&#x0003D;</mo><mn>3</mn><mi>&#x003B1;</mi><mo>&#x0003D;</mo><mn>3</mn><mi>&#x000D7;</mi><mn>1.9</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>5</mn></mrow></msup><mo>&#x0002F;</mo><msup><mrow></mrow><mo>&#x02218;</mo></msup><mi mathvariant=\"normal\">C</mi><mo>&#x0003D;</mo><mn>5.7</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>5</mn></mrow></msup><mo>&#x0002F;</mo><msup><mrow></mrow><mo>&#x02218;</mo></msup><mi mathvariant=\"normal\">C</mi>"
+    }
+  },
+  {
+    "defectId": "U008",
+    "questionId": "68f21caf941cda588bc04365",
+    "questionNumber": 31,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R021"
+    ],
+    "repair": "wrong_chapter",
+    "secondaryRepair": null,
+    "route": "faculty_review",
+    "severity": "medium",
+    "summary": "Radioactive decay & mean-life problem filed under 'Mathematics in physics -> Linear function' instead of 'Nuclear physics and radioactivity'.",
+    "evidence": "Student R021 reported the MCQ vs SCQ grading bug, but nobody reported that this nuclear decay question (N = N_0 e^(-t/tau)) is filed under Chapter 'Mathematics in physics', Concept 'Basic functions used in physics', SubConcept 'Linear function'.",
+    "edit": null
+  },
+  {
+    "defectId": "U009",
+    "questionId": "6956d7e988d7701e5617bd3e",
+    "questionNumber": 40,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R030"
+    ],
+    "repair": "notation",
+    "secondaryRepair": "solution_fix",
+    "route": "auto_apply",
+    "severity": "medium",
+    "summary": "Unit 'm' trapped inside square root radical (<msqrt>2 m</msqrt>) in all 4 options + minus signs '-' instead of '=' in velocity formula 'v - dx/dt - Aω cos ωt'.",
+    "evidence": "Student R030 miscalculated the amplitude as 4*sqrt(2). Meanwhile, in the question HTML all four options (A)-(D) put the unit 'm' inside <msqrt>, and the solution writes 'v − dx/dt − Aω cos ωt' (minus signs instead of equals signs) and 'ω = 2π/T = 2π/16 = π/8 = rad/s'.",
+    "edit": {
+      "field": "solution",
+      "find": "<mi> v </mi><mo>&minus;</mo><mfrac><mrow><mi> d </mi><mi> x </mi></mrow><mrow><mi> d </mi><mi> t </mi></mrow></mfrac><mo>&minus;</mo><mi> A </mi><mi>&omega;</mi><mi> cos </mi><mi>&omega;</mi><mi> t </mi>",
+      "replace": "<mi> v </mi><mo>=</mo><mfrac><mrow><mi> d </mi><mi> x </mi></mrow><mrow><mi> d </mi><mi> t </mi></mrow></mfrac><mo>=</mo><mi> A </mi><mi>&omega;</mi><mi> cos </mi><mi>&omega;</mi><mi> t </mi>"
+    }
+  },
+  {
+    "defectId": "U010",
+    "questionId": "68c801bc1b1dbc16dc93bf2b",
+    "questionNumber": 33,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R039"
+    ],
+    "repair": "markup_leak",
+    "secondaryRepair": null,
+    "route": "auto_apply",
+    "severity": "low",
+    "summary": "Raw LaTeX alignment ampersands '<mi>&</mi>' visible in MathML equations ('K & = ...' and 'K & ≈ ...').",
+    "evidence": "Student R039 only asked for Hindi translation. In the English solution, LaTeX align-environment '&' characters were converted literally into <mi>&</mi>, rendering stray ampersands in 'K & = 1.574e-29 / 1.638e-13' and 'K & ≈ 9.6e-17 J'.",
+    "edit": {
+      "field": "solution",
+      "find": "<mi>K</mi><mi>&</mi><mo>&#x0003D;</mo>",
+      "replace": "<mi>K</mi><mo>&#x0003D;</mo>"
+    }
+  },
+  {
+    "defectId": "U011",
+    "questionId": "68c8153cfb6b2f16e2d3ceaf",
+    "questionNumber": 39,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R020"
+    ],
+    "repair": "solution_missing",
+    "secondaryRepair": "markup_leak",
+    "route": "auto_apply",
+    "severity": "medium",
+    "summary": "Unusable 1-line stub solution ('conceptual Based of field force F = q(V × B) F = qE') that fails to evaluate options (A)-(D).",
+    "evidence": "Beyond the malformed answer key ['A, B, D'] reported by R020, the stored solution is an unusable fragment ('conceptual Based of field force') that never explains why (A), (B), (D) are true or why (C) is false (when v || B, F_B = 0 so trajectory is a straight line, not a helix).",
+    "edit": {
+      "field": "solution",
+      "find": "<h3>conceptual Based of field force<br />\n<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>F</mi><mo>=</mo><mi>q</mi><mo>(</mo><mi>V</mi><mo>&times;</mo><mi>B</mi><mo>)</mo></math><br />\n<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>F</mi><mo>=</mo><mi>q</mi><mi>E</mi></math></h3>",
+      "replace": "<h3>Electrostatic force is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>F</mi><mo>&rarr;</mo></mover><mo>=</mo><mi>q</mi><mover><mi>E</mi><mo>&rarr;</mo></mover></math> and magnetic force is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>F</mi><mo>&rarr;</mo></mover><mo>=</mo><mi>q</mi><mo>(</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>&times;</mo><mover><mi>B</mi><mo>&rarr;</mo></mover><mo>)</mo></math>.<br/>(A) Correct: For <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>&parallel;</mo><mover><mi>E</mi><mo>&rarr;</mo></mover></math>, acceleration is along velocity, giving a straight line.<br/>(B) Correct: For <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>&perp;</mo><mover><mi>E</mi><mo>&rarr;</mo></mover></math>, constant transverse acceleration gives a parabola.<br/>(C) Incorrect: For <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>&parallel;</mo><mover><mi>B</mi><mo>&rarr;</mo></mover></math>, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>&times;</mo><mover><mi>B</mi><mo>&rarr;</mo></mover><mo>=</mo><mn>0</mn></math>, so the path is a straight line, not a helix.<br/>(D) Correct: For <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>&perp;</mo><mover><mi>B</mi><mo>&rarr;</mo></mover></math>, magnetic force provides centripetal force for a circle normal to <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>B</mi><mo>&rarr;</mo></mover></math>. Thus (A), (B), (D) are correct.</h3>"
+    }
+  },
+  {
+    "defectId": "U012",
+    "questionId": "6956d79788d7701e5617bc29",
+    "questionNumber": 18,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R015"
+    ],
+    "repair": "markup_leak",
+    "secondaryRepair": null,
+    "route": "auto_apply",
+    "severity": "low",
+    "summary": "LaTeX alignment ampersands '<mi>&amp;</mi>' leaked into MathML in solution ('& P = ...' and '& φ = 90°').",
+    "evidence": "In addition to the duplicate '0 W' options reported in R015, the solution contains two leaked LaTeX alignment ampersands (<mi>&amp;</mi>) at the start of equations.",
+    "edit": {
+      "field": "solution",
+      "find": "<mi>&amp;</mi><mi>P</mi>",
+      "replace": "<mi>P</mi>"
+    }
+  },
+  {
+    "defectId": "U013",
+    "questionId": "622f08d7b70e4b50e4500a1b",
+    "questionNumber": 37,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R009",
+      "R010"
+    ],
+    "repair": "markup_leak",
+    "secondaryRepair": null,
+    "route": "auto_apply",
+    "severity": "low",
+    "summary": "LaTeX alignment ampersands '<mi>&</mi>' leaked into MathML in solution ('v_CM & = ... & = ...').",
+    "evidence": "In addition to missing option (D) reported by R009/R010, the stored solution has two leaked LaTeX alignment ampersands (<mi>&</mi>).",
+    "edit": {
+      "field": "solution",
+      "find": "<mi>&</mi><mo>&#x0003D;</mo>",
+      "replace": "<mo>&#x0003D;</mo>"
+    }
+  },
+  {
+    "defectId": "U014",
+    "questionId": "61ee6c9d90a1a968a168686b",
+    "questionNumber": 4,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R022"
+    ],
+    "repair": "spelling",
+    "secondaryRepair": null,
+    "route": "auto_apply",
+    "severity": "low",
+    "summary": "Unreported spelling errors 'prominant' ('prominent') and 'Maceus membrane' ('Mucous membrane') in solution.",
+    "evidence": "Student R022 reported 'Choroid plexux' in Option D, but the stored solution also contains two misspellings: 'prominant folds' and 'Maceus membrane'.",
+    "edit": {
+      "field": "solution",
+      "find": "Rugae are prominant folds found in empty stomach. Maceus membrane",
+      "replace": "Rugae are prominent folds found in empty stomach. Mucous membrane"
+    }
+  },
+  {
+    "defectId": "U015",
+    "questionId": "622df25ab70e4b50e44ff837",
+    "questionNumber": 20,
+    "hasStudentReport": true,
+    "relatedReports": [
+      "R025"
+    ],
+    "repair": "spelling",
+    "secondaryRepair": null,
+    "route": "auto_apply",
+    "severity": "low",
+    "summary": "Unreported spelling error 'hemispherial' ('hemispherical') in question stem.",
+    "evidence": "Student R025 reported the missing figure, while the stem also contains the typo 'End 1 has a hemispherial soap bubble'.",
+    "edit": {
+      "field": "question",
+      "find": "hemispherial soap bubble",
+      "replace": "hemispherical soap bubble"
+    }
+  }
+]
